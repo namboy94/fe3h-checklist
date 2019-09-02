@@ -16,3 +16,20 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with fe3h-checklist.  If not, see <http://www.gnu.org/licenses/>.
 LICENSE"""
+
+import os
+
+local_dir = os.path.join(os.path.expanduser("~"), ".config/fe3h-checklist")
+"""
+Directory containing local config files
+"""
+
+support_levels_info_file = os.path.join(local_dir, "supportinfo.ods")
+"""
+File containing the support level info file
+"""
+
+support_levels_file = os.path.join(local_dir, "supportlevels.ods")
+"""
+File containing the support level info file
+"""

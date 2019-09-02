@@ -18,15 +18,16 @@ along with fe3h-checklist.  If not, see <http://www.gnu.org/licenses/>.
 LICENSE"""
 
 import os
+import shutil
 from setuptools import setup, find_packages
+from fe3h_checklist import local_dir, support_levels_file, \
+    support_levels_info_file
 
 if __name__ == "__main__":
-
     setup(
         name="fe3h-checklist",
         version=open("version", "r").read(),
-        description="A CLI application that can keep track of Fire Emblem: "
-                    "Three Houses progress",
+        description="A checklist for Fire Emblem Three Houses",
         long_description=open("README.md", "r").read(),
         long_description_content_type="text/markdown",
         author="Hermann Krumrey",
@@ -41,10 +42,23 @@ if __name__ == "__main__":
         install_requires=[
             "typing",
             "colorama",
-            "puffotter"
+            "pyexcel_ods"
         ],
         test_suite='nose.collector',
         tests_require=['nose'],
         include_package_data=True,
         zip_safe=False
+    )
+
+if not os.path.isdir(local_dir):
+    os.makedirs(local_dir)
+if not os.path.isfile(support_levels_info_file):
+    shutil.copyfile(
+        "fe3h_checklist/data/support_levels_info.ods",
+        support_levels_info_file
+    )
+if not os.path.isfile(support_levels_file):
+    shutil.copyfile(
+        "fe3h_checklist/data/support_levels.ods",
+        support_levels_file
     )
