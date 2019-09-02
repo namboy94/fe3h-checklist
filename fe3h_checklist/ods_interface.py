@@ -74,7 +74,7 @@ def load_table(ods_file: str, sheet_name: str) -> Dict[str, Dict[str, str]]:
     return data_map
 
 
-def save_support_levels(support_levels: Dict[str, Dict[str,str]]):
+def save_support_levels(support_levels: Dict[str, Dict[str, str]]):
     """
     Saves the support levels to file
     :param support_levels: The support levels to save
