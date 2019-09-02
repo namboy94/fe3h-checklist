@@ -217,6 +217,6 @@ pseudoxml:
 
 
 buildsource:
-	sphinx-apidoc -f ../../fe3h-checklist -o source
+	sphinx-apidoc -f ../../fe3h_checklist -o source
 	@echo "Auto-generation of API documentation finished. " \
 		"The generated files are in 'source/'"

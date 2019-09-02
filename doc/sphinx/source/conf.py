@@ -26,7 +26,7 @@ from sphinx.ext.autodoc import between
 # noinspection PyShadowingBuiltins
 copyright = '2019 Hermann Krumrey'
 author = 'Hermann Krumrey'
-project = 'toktokkie'
+project = 'fe3h-checklist'
 
 extensions = ["sphinx.ext.autodoc"]
 master_doc = "index"

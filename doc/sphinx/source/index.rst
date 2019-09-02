@@ -6,7 +6,7 @@ Contents:
 .. toctree::
    :maxdepth: 2
 
-   fe3h-checklist.rst
+   fe3h_checklist.rst
    modules.rst
 
 Indices and tables
