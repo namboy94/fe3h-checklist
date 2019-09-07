@@ -58,7 +58,12 @@ def print_remaining_support_levels(no_byleth: bool, multi_line: bool):
     for rank, (character, total, remaining) in enumerate(ranking):
 
         supports = []
+        sorted_remaining = []
         for support, diff in remaining.items():
+            sorted_remaining.append((support, diff))
+        sorted_remaining.sort(key=lambda x: x[1], reverse=True)
+
+        for support, diff in sorted_remaining:
 
             if diff == 0:
                 continue

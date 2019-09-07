@@ -38,7 +38,7 @@ def set_support_level(char_one: str, char_two: str, level: str):
     if char_two not in info[char_one]:
         print("Invalid character combination")
         sys.exit(1)
-    elif level not in info[char_one][char_two]:
+    elif level not in info[char_one][char_two] and level != "X":
         print("Invalid support level")
         sys.exit(1)
     else:

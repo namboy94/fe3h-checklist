@@ -80,13 +80,19 @@ def save_support_levels(support_levels: Dict[str, Dict[str, str]]):
     :param support_levels: The support levels to save
     :return: None
     """
-    write_table(support_levels_file, "SupportLevels", support_levels)
+    write_table(
+        support_levels_file,
+        "SupportLevels",
+        support_levels,
+        plus_notation=True
+    )
 
 
 def write_table(
         ods_file: str,
         sheet_name: str,
-        data: Dict[str, Dict[str, str]]
+        data: Dict[str, Dict[str, str]],
+        plus_notation: bool = False
 ):
     """
     Writes the content of a dictionary mapping characters to each other
@@ -94,6 +100,9 @@ def write_table(
     :param ods_file: The ODS file to write to
     :param sheet_name: The sheet name to write to
     :param data: The data to write
+    :param plus_notation: Whether or not to use +-notation.
+                          True: 1 -> C+
+                          False: C1 -> CC
     :return: None
     """
     new_sheet = [[""]]
@@ -102,7 +111,7 @@ def write_table(
         new_row = [char_one]
         for char_two in data:
             entry = data[char_one].get(char_two, "")
-            entry = decode_support_levels(entry, for_sheet=True)
+            entry = decode_support_levels(entry, for_sheet=not plus_notation)
             new_row.append(entry)
         new_sheet.append(new_row)
 
