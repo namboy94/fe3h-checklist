@@ -43,7 +43,6 @@ docgen:
   stage: stats
   tags: [docker]
   script:
-    - pip install flask
     - sphinx-docgen
 
 release_upload:
